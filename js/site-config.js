@@ -6,12 +6,15 @@
 
 window.SITE = {
   name: "Arya Sr. Secondary School",
-  // Text logo (used until a logo image is added)
-  logoFirst: "Arya",
-  logoAccent: "",
-  logoSecond: "Sr. Secondary School",
-  logoImage: "",          // e.g. "images/logo-white.png" — replaces the text logo when set
-  logoImageDark: "",      // optional logo for the white (scrolled) header, e.g. "images/logo.png"
+  // Animated header logo: shield emblem + wordmark that types itself in once
+  logo: {
+    emblem: "images/logo/arya-emblem.png",       // transparent shield
+    wordmark: "images/logo/arya-wordmark.png",   // image version (used in the footer)
+    lines: ["Arya Senior Secondary", "School"],  // the two wordmark lines typed in the header
+    typingDelay: 500,      // ms to wait after the page opens before typing starts
+    typingSpeed: 55,       // ms per letter (lower = faster)
+    collapseAfter: 80      // px scrolled before the wordmark folds away and only the emblem stays
+  },
 
   contact: {
     addressLines: ["Bharan Road, Village and P.O. Madina", "Tehsil Meham, District Rohtak", "Haryana – 124001"],

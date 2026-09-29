@@ -39,24 +39,23 @@
   window.siteSmoother = smoother;
 
   /* ---------- 2. Header slides in on page load ---------- */
-  var logo = document.querySelector(".header__logo");
+  // The logo is not part of this: its emblem shows immediately and its wordmark types in (js/layout.js)
   var topLinks = document.querySelector(".burger_nav");
   var burger = document.querySelector(".burger");
   var headerBtns = document.querySelector(".header-buttons");
-  if (hasGsap && logo) {
+  var slideIn = [topLinks, headerBtns, burger].filter(Boolean);
+  if (hasGsap && slideIn.length) {
     if (scrollTop() < window.innerHeight) {
-      gsap.set(logo, { x: -CONFIG.headerSlideDistance });
-      gsap.set([topLinks, headerBtns, burger], { x: CONFIG.headerSlideDistance });
+      gsap.set(slideIn, { x: CONFIG.headerSlideDistance });
       var tl = gsap.timeline({ defaults: { duration: 1, ease: "none" } });
-      tl.to(logo, { opacity: 1, x: 0, delay: CONFIG.headerLoadDelay });
-      tl.to([topLinks, headerBtns, burger], { opacity: 1, x: 0 }, "-=1");
+      tl.to(slideIn, { opacity: 1, x: 0, delay: CONFIG.headerLoadDelay });
       var welcome = document.querySelector(".welcome-container");
       if (welcome && desktop()) { gsap.set(welcome, { opacity: 0 }); tl.to(welcome, { opacity: 1 }, "-=0.1"); }
     } else {
-      gsap.set([logo, topLinks, headerBtns, burger], { x: 0, opacity: 1 });
+      gsap.set(slideIn, { x: 0, opacity: 1 });
     }
-  } else if (logo) {
-    [logo, topLinks, headerBtns, burger].forEach(function (el) { if (el) el.style.opacity = 1; });
+  } else {
+    slideIn.forEach(function (el) { el.style.opacity = 1; });
   }
 
   /* ---------- 3. Sticky header after 200px ---------- */

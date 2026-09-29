@@ -89,7 +89,8 @@ h1 strong { display: block; font-family: var(--font-sans); font-size: 34px; line
 .staggered.active > div   { opacity: 1; }
 
 /* Header elements start hidden and slide in on page load */
-.js .header__logo, .js .burger_nav, .js .header-buttons, .js .burger { opacity: 0; }
+/* (the logo emblem is shown immediately; see .brand in layout.css) */
+.js .burger_nav, .js .header-buttons, .js .burger { opacity: 0; }
 
 @keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }

@@ -31,11 +31,22 @@
     return '<a href="' + l.href + '"' + (cls ? ' class="' + cls + '"' : "") + (l.href === current ? ' aria-current="page"' : "") + ">" + l.label + "</a>";
   }
   function list(items) { return items.map(function (l) { return "<li>" + link(l) + "</li>"; }).join(""); }
-  function logo(dark) {
-    var img = dark && S.logoImageDark ? S.logoImageDark : S.logoImage;
-    if (img) return '<img class="logo-img" src="' + img + '" alt="' + S.name + '">';
-    return '<span class="logo-text"><strong>' + S.logoFirst + "</strong>" + (S.logoAccent ? '<span class="amp">' + S.logoAccent + "</span>" : " ") +
-      '<span class="logo-rest">' + S.logoSecond + "</span></span>";
+  var L = S.logo;
+  var homeLabel = S.name.replace("Sr.", "Senior") + " — home";
+  // Header / menu logo: emblem + live-text wordmark (typed letter by letter on first open)
+  function brand(variant) {
+    var word = L.lines.map(function (line) {
+      return '<span class="brand-line">' + line.split("").map(function (ch) {
+        return '<span class="ch">' + (ch === " " ? "&nbsp;" : ch) + "</span>";
+      }).join("") + "</span>";
+    }).join("");
+    return '<img class="brand-emblem" src="' + L.emblem + '" alt="" width="220" height="209" decoding="async">' +
+      '<span class="brand-word ' + (variant || "") + '" aria-hidden="true"><span class="brand-word-inner">' + word + "</span></span>";
+  }
+  // Footer logo: emblem + the supplied wordmark image
+  function footerLogo() {
+    return '<img class="brand-emblem" src="' + L.emblem + '" alt="" width="220" height="209">' +
+      '<img class="footer-wordmark" src="' + L.wordmark + '" alt="" width="1419" height="210">';
   }
   function socials() {
     return Object.keys(S.social).filter(function (k) { return S.social[k]; }).map(function (k) {
@@ -56,7 +67,7 @@
       '<div class="site-header-wrap">' +
       '<div class="top-bar"><span>' + S.topBar + '</span><span class="sep">|</span><a href="' + tel(C.phone) + '">Call ' + C.phone + "</a></div>" +
       '<header class="site-header">' +
-        '<a class="header__logo" href="index.html">' + logo(false) + "</a>" +
+        '<a class="header__logo brand" href="index.html" aria-label="' + homeLabel + '">' + brand() + "</a>" +
         '<nav class="burger_nav" aria-label="Main sections"><ul>' + S.mainNav.map(function (item) {
           var on = activeSection && activeSection.href === item.href;
           return "<li" + (on ? ' class="current"' : "") + ">" + link(item) + "</li>";
@@ -70,7 +81,7 @@
       "</div>" +
       '<nav class="header__nav" aria-label="Main menu">' +
         '<div class="decor"></div>' +
-        '<a class="header__nav__logo" href="index.html">' + logo(false) + "</a>" +
+        '<a class="header__nav__logo brand" href="index.html" aria-label="' + homeLabel + '">' + brand("on-dark") + "</a>" +
         '<button class="close"><span>Close</span></button>' +
         '<div class="nav-container">' +
           '<ul class="main-menu">' + S.mainNav.map(function (item) {
@@ -118,7 +129,7 @@
     footer.innerHTML =
       '<footer class="site-footer">' +
         '<div class="footer-row">' +
-          '<a class="footer_logo" href="index.html">' + logo(true) + "</a>" +
+          '<a class="footer_logo brand" href="index.html" aria-label="' + homeLabel + '">' + footerLogo() + "</a>" +
           '<div class="footer-inner">' +
             '<div class="footer-column"><h2 class="footer-title">Contact Us</h2>' +
               '<div class="school-info">' + S.name + "<br>" + C.addressLines.join("<br>") + "</div>" +
@@ -174,5 +185,75 @@
     var q = encodeURIComponent(S.mapQuery);
     map.innerHTML = '<iframe title="Map to ' + S.name + '" loading="lazy" src="https://www.google.com/maps?q=' + q + '&output=embed"></iframe>';
     document.querySelectorAll("[data-directions]").forEach(function (a) { a.href = "https://www.google.com/maps/dir/?api=1&destination=" + q; a.target = "_blank"; a.rel = "noopener"; });
+  }
+
+  /* ---------- Animated header logo ----------
+     1. The emblem shows straight away; the wordmark types itself in once per visit
+        (again on a hard refresh, not when moving between pages).
+     2. After scrolling past S.logo.collapseAfter px the wordmark folds away (emblem only).
+     3. Hover / keyboard focus / first tap on the emblem shows the full wordmark instantly. */
+  var brandEl = document.querySelector(".site-header .brand");
+  var wrap = document.querySelector(".site-header-wrap");
+  if (brandEl && wrap) {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var chars = brandEl.querySelectorAll(".brand-word .ch");
+    var wordEl = brandEl.querySelector(".brand-word");
+
+    // Remember the wordmark's natural width so it can fold to 0 and back smoothly
+    var innerEl = brandEl.querySelector(".brand-word-inner");
+    function measure() { wordEl.style.setProperty("--word-w", Math.ceil(innerEl.scrollWidth) + 1 + "px"); }
+    measure();
+    // Re-measure when the web font arrives or the screen size changes the text size
+    if ("ResizeObserver" in window) new ResizeObserver(measure).observe(innerEl);
+    else window.addEventListener("resize", measure, { passive: true });
+    if (document.fonts && document.fonts.load) document.fonts.load('500 19px "Montserrat"').then(measure, function () {});
+
+    // Collapse when a 1px marker at the threshold leaves the viewport (no scroll listener needed)
+    var marker = document.createElement("div");
+    marker.setAttribute("aria-hidden", "true");
+    marker.style.cssText = "position:absolute;left:0;width:1px;height:1px;pointer-events:none;top:" + (L.collapseAfter || 80) + "px";
+    document.body.appendChild(marker);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        var collapsed = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+        wrap.classList.toggle("logo-collapsed", collapsed);
+        if (!collapsed) brandEl.classList.remove("revealed");
+      }).observe(marker);
+    }
+
+    // Typing: first open of the site in this tab, or a hard refresh
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var isReload = nav ? nav.type === "reload" : false;
+    var seen = false;
+    try { seen = sessionStorage.getItem("aryaLogoTyped") === "1"; sessionStorage.setItem("aryaLogoTyped", "1"); } catch (e) {}
+    var shouldType = !reduce && (isReload || !seen) && window.scrollY < (L.collapseAfter || 80);
+    if (shouldType) {
+      brandEl.classList.add("is-typing");
+      setTimeout(function () {
+        var i = 0;
+        (function next() {
+          if (i >= chars.length) { brandEl.classList.remove("is-typing"); return; }
+          chars[i++].classList.add("on");
+          setTimeout(next, L.typingSpeed || 55);
+        })();
+      }, L.typingDelay || 500);
+    }
+    // Coming back via the browser's back button: never leave letters hidden
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) { brandEl.classList.remove("is-typing"); }
+    });
+
+    // Touch: first tap on the emblem (while folded) shows the wordmark, second tap follows the link
+    var lastPointer = "mouse";
+    brandEl.addEventListener("pointerdown", function (e) { lastPointer = e.pointerType; });
+    brandEl.addEventListener("click", function (e) {
+      if (lastPointer === "touch" && wrap.classList.contains("logo-collapsed") && !brandEl.classList.contains("revealed")) {
+        e.preventDefault();
+        brandEl.classList.add("revealed");
+      }
+    });
+    document.addEventListener("pointerdown", function (e) {
+      if (!brandEl.contains(e.target)) brandEl.classList.remove("revealed");
+    });
   }
 })();
