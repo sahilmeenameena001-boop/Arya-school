@@ -13,7 +13,6 @@
 .top-bar { background: var(--color-dark); color: #fff; font-size: 13px; line-height: 1; padding: 8px 3rem; display: flex; justify-content: flex-end; align-items: center; gap: 10px; transition: all .4s; }
 .top-bar a { color: #fff; font-weight: 700; }
 .top-bar .sep { opacity: .5; }
-.top-bar .tbc { color: #5a4a00; }
 .site-header-wrap.sticky .top-bar { margin-top: -29px; }
 
 /* ---------- Header bar ---------- */
@@ -90,10 +89,11 @@
 .trust-strip li { font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase; padding: 0 18px; border-right: 1px solid rgba(255, 255, 255, .35); }
 .trust-strip li:last-child { border-right: 0; }
 
-/* ---------- "To confirm" highlight ----------
-   Anything in class="tbc" is still waiting for the school to confirm it.
-   Search the files for  tbc  to find every one. Remove the span once the real text is in. */
-.tbc { background: #fff3a3; color: #5a4a00; padding: 0 .25em; border-radius: 2px; font-style: normal; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+/* ---------- "To confirm" text ----------
+   Anything in class="tbc" is still waiting for the school to confirm it (shown as normal text).
+   Search the files for  tbc  to find every one. To highlight them in yellow again, use:
+   .tbc { background: #fff3a3; color: #5a4a00; padding: 0 .25em; } */
+.tbc { font-style: normal; }
 
 /* ---------- Full-screen menu ---------- */
 .header__nav {

@@ -9,8 +9,8 @@ The design and animations follow the reference site. All text comes from the *Ar
 
 ## ⚠ Before going live: the yellow items
 
-Anything the content doc marked **[CONFIRM] / [NUMBER] / [NAME] / [SESSION]** appears on the site
-**highlighted in yellow** (`<span class="tbc">…</span>`). The doc says nothing highlighted may go live.
+Anything the content doc marked **[CONFIRM] / [NUMBER] / [NAME] / [SESSION]** is wrapped in
+`<span class="tbc">…</span>` (shown as normal text; see `css/layout.css` to turn the yellow highlight back on). The doc says nothing highlighted may go live.
 
 - To find them all, search the files for `class="tbc"`. About 300 are spread across the pages, and some are in `js/site-config.js`.
 - To fix one, replace the bracketed text with the verified information and delete the `<span class="tbc">` wrapper.
