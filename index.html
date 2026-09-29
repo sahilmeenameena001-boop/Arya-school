@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arya Sr. Secondary School, Madina, Rohtak | CBSE School, Classes 1–12</title>
+  <meta name="description" content="A CBSE-affiliated senior secondary school in Madina, Rohtak, serving families since 2001. Science, Commerce and Arts streams, strong results and a caring campus. Admissions open.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<!-- data-smooth = smooth scrolling + parallax (desktop) -->
+<body class="home" data-smooth>
+
+  <div id="site-header"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+
+        <!-- ================= 1. HERO =================
+             Full-width 20-second looping video of real students and campus (assembly, lab, playground).
+             Put the files in /videos and uncomment the <source> lines. The poster shows until the video loads. -->
+        <section class="video-hero" style="background-image: url(images/placeholders/wide-01.svg);">
+          <video class="desktop" muted loop playsinline autoplay poster="images/placeholders/wide-01.svg">
+            <!-- <source src="videos/hero-desktop.mp4" type="video/mp4"> -->
+          </video>
+          <video class="mobile" muted loop playsinline autoplay poster="images/placeholders/portrait-01.svg">
+            <!-- <source src="videos/hero-mobile.mp4" type="video/mp4"> -->
+          </video>
+          <div class="hero-content">
+            <h1>Nurturing Minds. Shaping Futures.</h1>
+            <p>A CBSE senior secondary school in Madina, Rohtak. For 25 years we have helped children learn with confidence, grow in character and step into the future prepared.</p>
+            <div class="button-row">
+              <a class="button cta" href="admissions-enquiry.html">Apply for <span class="tbc">[2027–28]</span></a>
+              <a class="button border" href="admissions-enquiry.html">Book a Campus Visit</a>
+              <a class="button border" href="documents/prospectus.pdf">Download Prospectus</a>
+            </div>
+          </div>
+          <button class="mute-video" aria-label="Unmute video">
+            <svg class="icon-off" viewBox="0 0 40 32"><path d="M0 10h8l10-9v30L8 22H0z"/><path d="M26 10l12 12m0-12L26 22" stroke="#fff" stroke-width="3"/></svg>
+            <svg class="icon-on" viewBox="0 0 40 32"><path d="M0 10h8l10-9v30L8 22H0z"/><path d="M24 9a9 9 0 010 14M29 5a15 15 0 010 22" stroke="#fff" stroke-width="3" fill="none"/></svg>
+          </button>
+        </section>
+
+        <!-- ================= 2. TRUST STRIP ================= -->
+        <div data-trust-strip="short"></div>
+
+        <section class="welcome-and-slider">
+
+          <!-- ================= 3. WELCOME  +  4. ARYA AT A GLANCE ================= -->
+          <div class="welcome-and-stats">
+            <div class="decor"></div>
+            <div class="welcome-container">
+              <h1>Learning Begins With Us</h1>
+              <p>Arya Sr. Secondary School stands in the heart of Madina, Rohtak. Founded in 2001 with 300 students, we now teach more than 1,000 children, and our name has become one that local families trust.</p>
+              <p class="small">We believe education should awaken curiosity, build thinking skills and shape the whole child. Rigorous academics sit alongside sport, art, music and service, so students leave us with strong results and strong character.</p>
+              <p class="small">Our teachers know every child by name, celebrate their strengths and support them where they need it. That is how a child who arrives shy leaves as a confident young adult.</p>
+              <a class="text-link" href="about-our-story.html">Read Our Story &rarr;</a>
+            </div>
+            <div class="stats-container">
+              <h2>Arya at a Glance</h2>
+              <!-- Every figure must be verified by the school before launch.
+                   Numbers inside <span class="count"> count up when they scroll into view. -->
+              <div class="stats-row five">
+                <div class="s"><div class="num">2001</div><p>Year established</p></div>
+                <div class="s"><div class="num"><span class="count">1,000</span>+</div><p>Students learning with us</p></div>
+                <div class="s"><div class="num"><span class="tbc">[NUMBER]+</span></div><p>Qualified teachers and staff</p></div>
+                <div class="s"><div class="num"><span class="tbc">[NUMBER]+</span></div><p>Clubs, sports and activities</p></div>
+                <div class="s"><div class="num"><span class="tbc">[NUMBER]%</span></div><p>Class 12 pass result, <span class="tbc">[YEAR]</span></p></div>
+              </div>
+              <a class="button border dark" href="academics-results.html">Our Results</a>
+            </div>
+          </div>
+
+          <!-- ================= 5. CHOOSE YOUR PATH (pinned sideways-scrolling cards) =================
+               data-colour = background colour while that card is in the middle of the screen. -->
+          <section class="sticky-content">
+            <section class="horizontal">
+              <div class="pin-wrap">
+                <div class="decor"></div>
+                <div class="animation-wrap to-right">
+                  <div class="slide-wrapper">
+                    <div class="h-intro">
+                      <h2>Three Streams. One Strong Foundation.</h2>
+                      <p>From Class 11, students choose the path that fits their ambitions.</p>
+                    </div>
+                    <a href="academics-senior-secondary.html#science" class="h-slide" data-colour="#1a5fb4">
+                      <div class="image"><img src="images/placeholders/portrait-01.svg" alt="Science students in the lab"></div>
+                      <div class="copy"><h2>Science</h2><div class="reveal"><p>Build the base for engineering, medicine and research with hands-on lab learning.</p><span class="readmore">Explore Science &rarr;</span></div></div>
+                    </a>
+                    <a href="academics-senior-secondary.html#commerce" class="h-slide" data-colour="#2c3e9e">
+                      <div class="image"><img src="images/placeholders/portrait-02.svg" alt="Commerce students"></div>
+                      <div class="copy"><h2>Commerce</h2><div class="reveal"><p>Understand business, finance and enterprise for careers in CA, management and banking.</p><span class="readmore">Explore Commerce &rarr;</span></div></div>
+                    </a>
+                    <a href="academics-senior-secondary.html#arts" class="h-slide" data-colour="#0f2a4a">
+                      <div class="image"><img src="images/placeholders/portrait-03.svg" alt="Arts and Humanities students"></div>
+                      <div class="copy"><h2>Arts and Humanities</h2><div class="reveal"><p>Think critically about people, society and history for law, civil services, teaching and media.</p><span class="readmore">Explore Arts &rarr;</span></div></div>
+                    </a>
+                    <a href="academics-careers.html" class="h-slide" data-colour="#3b7dc4">
+                      <div class="image"><img src="images/placeholders/portrait-04.svg" alt="Careers guidance session"></div>
+                      <div class="copy"><h2>Careers and Guidance</h2><div class="reveal"><p>Helping every student choose the right next step.</p><span class="readmore">Read More &rarr;</span></div></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </section>
+
+        <!-- ================= 6. LIFE AT ARYA ================= -->
+        <section class="blue-section">
+          <div class="upper">
+            <div class="decor"></div>
+            <div class="wrapper">
+              <!-- data-speed = parallax speed (1 = normal, 1.2 = moves faster) -->
+              <div class="images" data-speed="1.2">
+                <div class="image-wrapper"><img src="images/placeholders/portrait-05.svg" alt="Students on the playground"></div>
+                <div class="image-wrapper"><img src="images/placeholders/photo-08.svg" alt="Students performing on stage"></div>
+                <div class="image-wrapper"><img src="images/placeholders/photo-09.svg" alt="Festival celebration at school"></div>
+              </div>
+              <div class="content">
+                <h2>Life at Arya</h2>
+                <p><strong>Where Learning Goes Beyond the Classroom</strong></p>
+                <p>Sport, music, drama, art, writing and the festivals we celebrate together. Every child finds something that makes them shine.</p>
+                <a href="life-at-arya.html" class="button border">See Life at Arya</a>
+              </div>
+            </div>
+          </div>
+          <div class="lower">
+            <div class="wrapper">
+              <div class="videos-grid four">
+                <a class="video-card info" href="life-sports.html">
+                  <img src="images/placeholders/photo-10.svg" alt="Athletics on the playground">
+                  <div class="line">Students choose the sport they love and train on our spacious playground.</div>
+                  <div class="title">Athletics and Sport</div>
+                </a>
+                <a class="video-card info" href="life-performing-arts.html">
+                  <img src="images/placeholders/photo-11.svg" alt="Dance performance">
+                  <div class="line">Professional trainers guide dance, drama, painting and music.</div>
+                  <div class="title">Performing Arts and Music</div>
+                </a>
+                <a class="video-card info" href="life-publications.html">
+                  <img src="images/placeholders/photo-12.svg" alt="School magazine">
+                  <div class="line">Young writers publish their work in our school magazines.</div>
+                  <div class="title">In-house Publications</div>
+                </a>
+                <a class="video-card info" href="life-celebrations.html">
+                  <img src="images/placeholders/photo-01.svg" alt="Diwali celebration">
+                  <div class="line">Diwali, Dussehra, Vasant Panchami and Haryana Day bring the whole school together.</div>
+                  <div class="title">Celebrations</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 7. MEET OUR ACHIEVERS (hover a card to read more) =================
+             Use the five JEE Toppers photographs. Get written consent to publish names, photos and scores. -->
+        <section class="pioneers">
+          <div class="wrapper">
+            <h2>Arya Achievers: Dreaming More, Doing More</h2>
+            <p>Our students have cleared some of the country’s toughest entrance exams and posted strong Board results. Here are a few of them.</p>
+          </div>
+          <div class="people five">
+            <div class="p"><div class="bg" style="background-image:url(images/placeholders/portrait-01.svg)"></div><div class="reveal"><span class="name"><span class="tbc">[NAME]</span></span><p><strong><span class="tbc">[JEE Main percentile / Board percentage, YEAR]</span></strong></p><p class="quote"><span class="tbc">[One-line quote from the student]</span></p></div></div>
+            <div class="p"><div class="bg" style="background-image:url(images/placeholders/portrait-02.svg)"></div><div class="reveal"><span class="name"><span class="tbc">[NAME]</span></span><p><strong><span class="tbc">[JEE Main percentile / Board percentage, YEAR]</span></strong></p><p class="quote"><span class="tbc">[One-line quote from the student]</span></p></div></div>
+            <div class="p"><div class="bg" style="background-image:url(images/placeholders/portrait-03.svg)"></div><div class="reveal"><span class="name"><span class="tbc">[NAME]</span></span><p><strong><span class="tbc">[JEE Main percentile / Board percentage, YEAR]</span></strong></p><p class="quote"><span class="tbc">[One-line quote from the student]</span></p></div></div>
+            <div class="p"><div class="bg" style="background-image:url(images/placeholders/portrait-04.svg)"></div><div class="reveal"><span class="name"><span class="tbc">[NAME]</span></span><p><strong><span class="tbc">[JEE Main percentile / Board percentage, YEAR]</span></strong></p><p class="quote"><span class="tbc">[One-line quote from the student]</span></p></div></div>
+            <div class="p"><div class="bg" style="background-image:url(images/placeholders/portrait-05.svg)"></div><div class="reveal"><span class="name"><span class="tbc">[NAME]</span></span><p><strong><span class="tbc">[JEE Main percentile / Board percentage, YEAR]</span></strong></p><p class="quote"><span class="tbc">[One-line quote from the student]</span></p></div></div>
+          </div>
+          <div class="arrow-container"><a class="arrow-link" href="achievers.html">All our achievers</a></div>
+        </section>
+
+        <!-- ================= 8. PRINCIPAL'S MESSAGE (SHORT) ================= -->
+        <section class="testimonial-home">
+          <div class="wrapper">
+            <div class="testimonial"><p>We want every child who walks through our gates to dream more, learn more, do more and become more.</p></div>
+            <div class="author">Mr. Ashok Kumar Dangi, Principal</div>
+            <a href="about-principals-message.html" class="button border">Read the full message</a>
+          </div>
+        </section>
+
+        <!-- ================= 9. CAMPUS GLIMPSE ================= -->
+        <section class="circle-signpost">
+          <div class="title"><h2>Campus</h2></div>
+          <div class="signposts">
+            <a href="campus.html#classrooms" class="s"><div class="image"><div class="bg" style="background-image:url(images/placeholders/photo-03.svg)"></div></div><span>Classrooms</span></a>
+            <a href="campus.html#library" class="s"><div class="image"><div class="bg" style="background-image:url(images/placeholders/photo-04.svg)"></div></div><span>Library</span></a>
+            <a href="campus.html#science-lab" class="s"><div class="image"><div class="bg" style="background-image:url(images/placeholders/photo-05.svg)"></div></div><span>Science Lab</span></a>
+            <a href="campus.html#computer-lab" class="s"><div class="image"><div class="bg" style="background-image:url(images/placeholders/photo-06.svg)"></div></div><span>Computer Lab</span></a>
+          </div>
+          <div class="glimpse">
+            <p>Classrooms designed for interaction. A library with thousands of books. A science lab for hands-on discovery. A computer lab for the digital age. A theatre, an activity area and a playground made for growing minds.</p>
+            <a class="button border" href="campus.html">Take a Campus Tour</a>
+          </div>
+        </section>
+
+        <!-- ================= 10. WHAT PARENTS SAY =================
+             Three testimonials, 30 to 40 words each, with parent name and the class of their child. Collect with written permission. -->
+        <section class="section-pad" style="background: var(--color-bg-alt);">
+          <h2>What Parents Say</h2>
+          <div class="testimonial-cards">
+            <blockquote><p><span class="tbc">[Testimonial, 30 to 40 words]</span></p><cite><span class="tbc">[Parent name], parent of a Class [ ] student</span></cite></blockquote>
+            <blockquote><p><span class="tbc">[Testimonial, 30 to 40 words]</span></p><cite><span class="tbc">[Parent name], parent of a Class [ ] student</span></cite></blockquote>
+            <blockquote><p><span class="tbc">[Testimonial, 30 to 40 words]</span></p><cite><span class="tbc">[Parent name], parent of a Class [ ] student</span></cite></blockquote>
+          </div>
+        </section>
+
+        <!-- ================= 11. ADMISSION BANNER ================= -->
+        <section class="cta-banner">
+          <div class="decor"></div>
+          <h2>Admissions are open for <span class="tbc">[SESSION]</span></h2>
+          <p>Give your child a school that knows them by name. Speak to our admissions team, visit the campus and see the difference for yourself.</p>
+          <div class="button-row">
+            <a class="button cta" href="admissions-enquiry.html">Apply Now</a>
+            <a class="button border" href="#" data-link="call">Call 98963 23370</a>
+            <a class="button whatsapp" href="#" data-link="whatsapp">WhatsApp Us</a>
+          </div>
+        </section>
+
+        <!-- ================= 12. FOLLOW ARYA ================= -->
+        <section class="follow-band">
+          <h2>Follow Arya</h2>
+          <p>Watch, read and join in: our latest videos, photos and news from YouTube, Instagram and Facebook.</p>
+          <div class="icons">
+            <a href="#" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+            <a href="#" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.4 1.4 0 100 2.9 1.4 1.4 0 000-2.9z"/></svg></a>
+            <a href="#" data-social="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.8C10.6 0 9 1.6 9 4.6V8z"/></svg></a>
+          </div>
+          <p class="hashtag">#LearnWithArya</p>
+        </section>
+
+      </main>
+      <div id="site-footer"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+  <script src="js/site-config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

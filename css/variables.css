@@ -1,0 +1,40 @@
+/* =====================================================================
+   VARIABLES  —  change colours, fonts and sizes for the whole site here.
+   ===================================================================== */
+
+:root {
+  /* Brand colours */
+  --color-primary: #1a5fb4;        /* main blue: headings, buttons, menu, red sections of the original */
+  --color-primary-dark: #134a8e;   /* darker blue: hover states, "Learn more" band */
+  --color-primary-tint: rgba(26, 95, 180, 0.4);
+  --color-secondary: #5fa8e0;      /* light blue: the "Sixth Form / Life at" band on the home page */
+  --color-accent: #8ec5ff;         /* small accents (footer titles, links on dark) */
+  --color-cta: #f39c12;            /* saffron: "Apply Now" buttons (per the content doc) */
+  --color-cta-dark: #d9820a;
+
+  /* Neutrals */
+  --color-text: #585858;           /* body text */
+  --color-heading: #363636;        /* dark headings */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f6f6f6;         /* alternate section background */
+  --color-bg-soft: #f1f1f1;        /* downloads, accordions, timeline captions */
+  --color-dark: #0f2a4a;           /* footer bottom bar etc. */
+  --color-border: #ededed;
+  --color-white: #ffffff;
+
+  /* Colours for the home page horizontal slider background — one per slide
+     (set on each slide with data-colour="..." in index.html) */
+
+  /* Fonts (loaded from Google Fonts in each page <head>) */
+  --font-sans: "Nunito Sans", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-serif: "Crimson Pro", Georgia, "Times New Roman", serif;
+
+  /* Layout */
+  --wrap: 1529px;                  /* max content width of big sections */
+  --gutter: 3vw;
+  --radius: 0px;
+
+  /* Decorative background shape used behind sections (the original used a big "&").
+     Replace with your own logo mark: url("../images/decor.svg") */
+  --decor-image: url("../images/decor.svg");
+}

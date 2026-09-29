@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1067" height="1600" viewBox="0 0 1067 1600">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#90c2de"/><stop offset="1" stop-color="#3384b1"/></linearGradient></defs>
+<rect width="1067" height="1600" fill="url(#g)"/>
+<circle cx="586" cy="512" r="96" fill="#d4e3ec"/>
+<path d="M0 1152 L320 800 L586 1088 L832 736 L1067 1024 L1067 1600 L0 1600Z" fill="#28668a"/>
+<path d="M0 1360 L426 1120 L746 1312 L1067 1184 L1067 1600 L0 1600Z" fill="#1c4962"/>
+<text x="533" y="128" fill="#fff" fill-opacity=".7" font-family="Arial, sans-serif" font-size="37" text-anchor="middle">Replace portrait 06</text>
+</svg>

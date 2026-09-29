@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="900" viewBox="0 0 2400 900">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#90b9de"/><stop offset="1" stop-color="#3375b1"/></linearGradient></defs>
+<rect width="2400" height="900" fill="url(#g)"/>
+<circle cx="1080" cy="288" r="81" fill="#d4e0ec"/>
+<path d="M0 648 L720 450 L1320 612 L1872 414 L2400 576 L2400 900 L0 900Z" fill="#285b8a"/>
+<path d="M0 765 L960 630 L1680 738 L2400 666 L2400 900 L0 900Z" fill="#1c4162"/>
+<text x="1200" y="72" fill="#fff" fill-opacity=".7" font-family="Arial, sans-serif" font-size="31" text-anchor="middle">Replace header image</text>
+</svg>

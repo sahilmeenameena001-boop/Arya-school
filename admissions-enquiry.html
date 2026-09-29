@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry Form | Admissions | Arya Sr. Secondary School</title>
+  <meta name="description" content="How to apply to Arya Sr. Secondary School, Madina. Admission process, eligibility, documents, fee structure and answers to common questions.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="page">
+
+  <div id="site-header"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+
+        <div class="header-image-wrapper">
+          <div class="header-image" style="background-image:url(images/placeholders/photo-10.svg)"></div>
+        </div>
+
+        <div class="standard_page">
+          <div class="decor decor-page"></div>
+          <div class="aside-components"><nav class="side-nav" data-auto></nav></div>
+          <div class="main-components">
+
+          <section class="textContent">
+            <div class="content-typography">
+              <h1>Enquiry Form <span class="subtitle">Request a Call Back</span></h1>
+              <p>Tell us a little about your child and our admissions team will call you back within one working day. You can also book a campus visit here.</p>
+            </div>
+          </section>
+
+          <!-- FORM: see "formEndpoint" in js/site-config.js for where messages go -->
+          <form class="enquiry-form" data-enquiry-form="Admissions enquiry" novalidate>
+            <div class="grid">
+              <div><label for="f-parent">Parent's name</label><input id="f-parent" name="Parent's name" required autocomplete="name"></div>
+              <div><label for="f-mobile">Mobile number</label><input id="f-mobile" name="Mobile number" type="tel" required pattern="[0-9 +\-]{10,15}" autocomplete="tel"></div>
+              <div><label for="f-email">Email <span class="optional">(optional)</span></label><input id="f-email" name="Email" type="email" autocomplete="email"></div>
+              <div><label for="f-child">Child's name</label><input id="f-child" name="Child's name" required></div>
+              <div><label for="f-class">Class applying for</label><select id="f-class" name="Class applying for" required><option value="">Choose a class</option><option>Nursery</option><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select></div>
+              <div><label for="f-stream">Preferred stream <span class="optional">(Class 11 only)</span></label><select id="f-stream" name="Preferred stream"><option value="">Not applicable</option><option>Science</option><option>Commerce</option><option>Arts and Humanities</option></select></div>
+              <div class="full"><label for="f-message">Message</label><textarea id="f-message" name="Message"></textarea></div>
+            </div>
+            <button class="button cta" type="submit">Request a Call Back</button>
+            <p class="privacy">We respect your privacy and will use your details only to respond to your enquiry.</p>
+            <div class="form-message" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="button-row"><a class="button outline" href="#" data-link="call">Call 98963 23370</a><a class="button whatsapp" href="#" data-link="whatsapp">Chat with us on WhatsApp</a></div>
+
+          </div>
+        </div>
+
+        <div class="alternate_scheme">
+
+        <!-- EXPLORE CARDS -->
+        <section class="image-blocks">
+          <h2 class="section_title">Explore</h2>
+          <div class="image-block-items-container">
+            <div class="image-block-item">
+              <a href="admissions-how-to-apply.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/photo-11.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">How to Apply</h2>
+                  <div class="summary"><p>Five simple steps</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="admissions-eligibility.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/portrait-04.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Eligibility and Documents</h2>
+                  <div class="summary"><p>Who can apply</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="admissions-fees.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/photo-12.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Fee Structure</h2>
+                  <div class="summary"><p>Fees for every class</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="admissions-scholarships.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/portrait-05.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Scholarships</h2>
+                  <div class="summary"><p>Support and concessions</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="admissions-faqs.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/photo-01.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">FAQs</h2>
+                  <div class="summary"><p>Your questions answered</p></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/site-config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* =====================================================================
+   BASE  —  reset, typography, buttons, scroll-reveal animation classes.
+   ===================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-family: var(--font-sans); color: #18292f; }
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-bg);
+  overflow-x: hidden;
+}
+
+main { display: block; overflow: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.1; margin-top: 10px; font-weight: 700; }
+h1 { font-family: var(--font-serif); font-weight: 300; font-size: 60px; line-height: 72px; color: var(--color-heading); margin-bottom: .75em; }
+h2 { font-size: 30px; line-height: 35px; font-weight: 400; margin-bottom: 1em; color: var(--color-text); text-transform: uppercase; }
+h3 { font-size: 24px; margin-bottom: 20px; }
+h4 { font-size: 22px; margin-bottom: 20px; }
+p { color: var(--color-text); line-height: 24px; font-size: 16px; margin: 0 0 2em; font-weight: 400; }
+
+@media (min-width: 576px) { h1 { font-size: 70px; line-height: 82px; } }
+@media (min-width: 1200px) { p { font-size: 17px; line-height: 30px; } }
+
+/* Small serif subtitle inside an h1:  <h1>Title <strong class="subtitle">Subtitle</strong></h1> */
+h1 strong { display: block; font-family: var(--font-sans); font-size: 34px; line-height: 40px; font-weight: 400; }
+.accent { color: var(--color-primary); }
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-block;
+  text-align: center;
+  font-family: var(--font-serif);
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: .75em 2em;
+  letter-spacing: .31px;
+  margin-bottom: 1em;
+  border: 0;
+  transition: .4s ease-in-out;
+}
+.button:hover { background: var(--color-primary-dark); }
+
+/* Outline button (white border) — used on coloured backgrounds */
+.button.border {
+  border: 1px solid var(--color-white);
+  background-color: transparent;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(16px, 1.157vw, 20px);
+}
+.button.border:hover { background-color: var(--color-white); color: var(--color-primary); }
+
+/* Outline button in brand colour — used on white backgrounds */
+.button.border.dark { border-color: var(--color-primary); color: var(--color-primary); }
+.button.border.dark:hover { background-color: var(--color-primary); color: var(--color-white); }
+
+/* ---------- Decorative background shape (see --decor-image) ---------- */
+.decor {
+  position: absolute;
+  pointer-events: none;
+  background: currentColor;
+  -webkit-mask: var(--decor-image) no-repeat center / contain;
+          mask: var(--decor-image) no-repeat center / contain;
+  aspect-ratio: 1.13 / 1;
+}
+
+/* ---------- Scroll reveal (added automatically by js/animations.js) ----------
+   Headings, paragraphs, quotes and downloads fade up as they scroll into view.
+   Add class "no-reveal" to anything you don't want animated. */
+.animate_it.deactive { opacity: 0; transform: translateY(30%); transition: all 0s linear 0s; }
+.animate_it.active   { opacity: 1; transform: translateY(0);   transition: all .33s linear 0s; }
+.animate_it.download-item.deactive { transform: none; width: 0; }
+.animate_it.download-item.active   { width: 100%; }
+
+/* Explore cards pop in one after another */
+.staggered.deactive > div { opacity: 0; }
+.staggered.active > div   { opacity: 1; }
+
+/* Header elements start hidden and slide in on page load */
+.js .header__logo, .js .burger_nav, .js .header-buttons, .js .burger { opacity: 0; }
+
+@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate_it.deactive, .staggered.deactive > div { opacity: 1; transform: none; }
+}
+[id] { scroll-margin-top: 140px; }
