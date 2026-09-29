@@ -193,3 +193,13 @@
 .h-intro h2 { color: #fff; font-weight: 900; text-transform: uppercase; font-size: clamp(36px, 4.2vw, 72px); line-height: .95; margin: 0 0 24px; }
 .h-intro p { color: #fff; font-size: clamp(18px, 1.4vw, 24px); line-height: 1.4; }
 @media (max-width: 1023px) { .h-intro { width: 80vw; } }
+
+/* Five figures: keep them inside the page width, like the four-figure original */
+.stats-container .stats-row.five { width: min(1467px, 94vw); grid-template-columns: repeat(5, 1fr); }
+.stats-row.five .s { max-width: none; padding: 0 clamp(10px, 1.6vw, 30px); box-sizing: border-box; }
+.stats-row.five .s .num { font-size: clamp(34px, 4vw, 72px); white-space: nowrap; }
+@media (max-width: 768px) {
+  .stats-container .stats-row.five { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 0; }
+  .stats-row.five .s { width: auto; }
+  .stats-row.five .s:nth-child(2n)::after { content: none; }
+}
