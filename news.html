@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/variables.css?v=5">
-  <link rel="stylesheet" href="css/base.css?v=5">
-  <link rel="stylesheet" href="css/layout.css?v=5">
-  <link rel="stylesheet" href="css/components.css?v=5">
-  <link rel="stylesheet" href="css/home.css?v=5">
-  <link rel="stylesheet" href="css/landing.css?v=5">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?v=6">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/home.css?v=6">
+  <link rel="stylesheet" href="css/landing.css?v=6">
 </head>
 <body class="page">
 
@@ -28,8 +28,6 @@
         <div class="header-image-wrapper">
           <div class="header-image" style="background-image:url(images/placeholders/wide-02.svg)"></div>
         </div>
-        <!-- NOTICES STRIP: urgent updates such as holidays or fee due dates (delete when not needed) -->
-        <div class="notice-strip">Notice: <span class="tbc">[Holiday / fee due date / urgent update]</span></div>
         <div class="standard_page">
           <div class="main-components" style="width:100%">
             <section class="textContent">
@@ -43,6 +41,14 @@
         </div>
         <!-- NEWS GRID: copy a news_item to add a story (aim for at least two a month) and link it to its article page -->
         <div class="news_grid">
+          <div class="news_item" style="background-image:url(images/placeholders/photo-10.svg)">
+            <div class="content">
+              <h2><span class="tbc">[News story title]</span></h2>
+              <p class="date"><span class="tbc">[DD.MM.YYYY]</span></p>
+              <div class="summary"><p><span class="tbc">[Two lines about the story]</span></p><span class="readmore">Read Full</span></div>
+            </div>
+            <a href="news-article.html" aria-label="Read the story"></a>
+          </div>
           <div class="news_item" style="background-image:url(images/placeholders/photo-11.svg)">
             <div class="content">
               <h2><span class="tbc">[News story title]</span></h2>
@@ -83,14 +89,6 @@
             </div>
             <a href="news-article.html" aria-label="Read the story"></a>
           </div>
-          <div class="news_item" style="background-image:url(images/placeholders/photo-04.svg)">
-            <div class="content">
-              <h2><span class="tbc">[News story title]</span></h2>
-              <p class="date"><span class="tbc">[DD.MM.YYYY]</span></p>
-              <div class="summary"><p><span class="tbc">[Two lines about the story]</span></p><span class="readmore">Read Full</span></div>
-            </div>
-            <a href="news-article.html" aria-label="Read the story"></a>
-          </div>
         </div>
       </main>
       <div id="site-footer"></div>
@@ -100,9 +98,9 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/site-config.js?v=5"></script>
-  <script src="js/layout.js?v=5"></script>
-  <script src="js/animations.js?v=5"></script>
-  <script src="js/components.js?v=5"></script>
+  <script src="js/site-config.js?v=6"></script>
+  <script src="js/layout.js?v=6"></script>
+  <script src="js/animations.js?v=6"></script>
+  <script src="js/components.js?v=6"></script>
 </body>
 </html>

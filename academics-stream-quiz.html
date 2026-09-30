@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Stream Suits Me? | Arya Sr. Secondary School</title>
+  <meta name="description" content="Ten simple questions for Class 10 students and parents that suggest Science, Commerce or Arts.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?v=6">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/home.css?v=6">
+  <link rel="stylesheet" href="css/landing.css?v=6">
+</head>
+<body class="page">
+
+  <div id="site-header"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+
+        <div class="header-image-wrapper">
+          <div class="header-image" style="background-image:url(images/placeholders/photo-02.svg)"></div>
+        </div>
+
+        <div class="standard_page">
+          <div class="decor decor-page"></div>
+          <div class="aside-components"><nav class="side-nav" data-auto></nav></div>
+          <div class="main-components">
+
+          <section class="textContent">
+            <div class="content-typography">
+              <h1>Which Stream Suits Me? <span class="subtitle">A Quick Quiz</span></h1>
+              <p>Ten simple questions for Class 10 students and parents. Answer honestly: there are no wrong answers. At the end we suggest the stream that may suit you best, and you can talk to our careers guide.</p>
+            </div>
+          </section>
+
+          <form class="stream-quiz" novalidate>
+            <fieldset class="quiz-q"><legend>1. Which subjects do you enjoy most?</legend>
+              <label><input type="radio" name="q0" value="science" required> Maths and Science</label>
+              <label><input type="radio" name="q0" value="commerce"> Business, money and numbers</label>
+              <label><input type="radio" name="q0" value="arts"> Languages, history and society</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>2. What would you rather do on a free afternoon?</legend>
+              <label><input type="radio" name="q1" value="science" required> Build or fix something</label>
+              <label><input type="radio" name="q1" value="commerce"> Plan a small business or sale</label>
+              <label><input type="radio" name="q1" value="arts"> Read, write or debate</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>3. Which project sounds most fun?</legend>
+              <label><input type="radio" name="q2" value="science" required> A science experiment</label>
+              <label><input type="radio" name="q2" value="commerce"> A budget for a school event</label>
+              <label><input type="radio" name="q2" value="arts"> A newspaper or a play</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>4. Which job sounds exciting?</legend>
+              <label><input type="radio" name="q3" value="science" required> Doctor, engineer or scientist</label>
+              <label><input type="radio" name="q3" value="commerce"> CA, banker or entrepreneur</label>
+              <label><input type="radio" name="q3" value="arts"> Lawyer, civil servant or journalist</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>5. How do you like to solve problems?</legend>
+              <label><input type="radio" name="q4" value="science" required> With formulas and experiments</label>
+              <label><input type="radio" name="q4" value="commerce"> With data and planning</label>
+              <label><input type="radio" name="q4" value="arts"> With discussion and ideas</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>6. Which news story would you read first?</legend>
+              <label><input type="radio" name="q5" value="science" required> A new space mission</label>
+              <label><input type="radio" name="q5" value="commerce"> A company’s big success</label>
+              <label><input type="radio" name="q5" value="arts"> A change in the law</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>7. In a group project you usually…</legend>
+              <label><input type="radio" name="q6" value="science" required> Do the calculations and tests</label>
+              <label><input type="radio" name="q6" value="commerce"> Organise the money and plan</label>
+              <label><input type="radio" name="q6" value="arts"> Write and present</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>8. Which exam would you like to prepare for?</legend>
+              <label><input type="radio" name="q7" value="science" required> JEE or NEET</label>
+              <label><input type="radio" name="q7" value="commerce"> CA Foundation or CUET (Commerce)</label>
+              <label><input type="radio" name="q7" value="arts"> CLAT, CUET (Humanities) or UPSC later</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>9. Which school club appeals to you?</legend>
+              <label><input type="radio" name="q8" value="science" required> Science or robotics club</label>
+              <label><input type="radio" name="q8" value="commerce"> Commerce or enterprise club</label>
+              <label><input type="radio" name="q8" value="arts"> Debate, drama or writing club</label>
+            </fieldset>
+            <fieldset class="quiz-q"><legend>10. What do teachers praise you for?</legend>
+              <label><input type="radio" name="q9" value="science" required> Logic and accuracy</label>
+              <label><input type="radio" name="q9" value="commerce"> Practical sense and organisation</label>
+              <label><input type="radio" name="q9" value="arts"> Creativity and expression</label>
+            </fieldset>
+            <button class="button cta" type="submit">See My Stream</button>
+            <div class="quiz-result" role="status" aria-live="polite" hidden>
+              <h2>Your stream: <span class="stream-name"></span></h2>
+              <p class="stream-line"></p>
+              <p>This is a guide, not a decision. Leave your mobile number and our careers guide will call you.</p>
+            </div>
+          </form>
+          <form class="enquiry-form quiz-follow" data-enquiry-form="Stream quiz follow-up" hidden novalidate>
+            <div class="grid">
+              <div><label for="qz-name">Name</label><input id="qz-name" name="Name" required></div>
+              <div><label for="qz-mobile">Mobile number</label><input id="qz-mobile" name="Mobile number" type="tel" required pattern="[0-9 +\-]{10,15}"></div>
+              <input type="hidden" name="Suggested stream" class="qz-stream">
+            </div>
+            <button class="button cta" type="submit">Talk to Our Careers Guide</button>
+            <div class="form-message" role="status" aria-live="polite"></div>
+          </form>
+
+          </div>
+        </div>
+
+        <div class="alternate_scheme">
+
+        <!-- EXPLORE CARDS -->
+        <section class="image-blocks">
+          <h2 class="section_title">Explore</h2>
+          <div class="image-block-items-container">
+            <div class="image-block-item">
+              <a href="academics-learning-approach.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/photo-03.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Learning Approach</h2>
+                  <div class="summary"><p>How we teach</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="academics-primary-middle.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/portrait-05.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Primary and Middle</h2>
+                  <div class="summary"><p>Classes 1–8</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="academics-secondary.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/photo-04.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Secondary</h2>
+                  <div class="summary"><p>Classes 9–10</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="academics-senior-secondary.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/portrait-06.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Senior Secondary Streams</h2>
+                  <div class="summary"><p>Science · Commerce · Arts</p></div>
+                </div>
+              </a>
+            </div>
+            <div class="image-block-item">
+              <a href="academics-careers.html">
+                <div class="image-block-image" style="background-image:url(images/placeholders/photo-05.svg)"></div>
+                <div class="borderOverlay"></div>
+                <div class="image-block-content">
+                  <h2 class="image-block-title">Careers and Guidance</h2>
+                  <div class="summary"><p>The right next step</p></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/site-config.js?v=6"></script>
+  <script src="js/layout.js?v=6"></script>
+  <script src="js/animations.js?v=6"></script>
+  <script src="js/components.js?v=6"></script>
+</body>
+</html>

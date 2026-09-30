@@ -34,7 +34,15 @@ window.SITE = {
   session: "[2027–28]",
 
   // Round button fixed to the bottom-left corner ("" label to hide)
-  stickyButton: { label: "Book a<br>Campus<br>Visit", href: "admissions-enquiry.html" },
+  // Change the wording with the calendar, e.g. "Admissions<br>Open<br>2027–28" or "Class 11<br>Open Day". "" hides it.
+  stickyButton: { label: "Open Day<br>Book Your<br>Visit", href: "admissions-open-days.html" },
+
+  // Urgent notices bar on every page (holidays, closures, fee dates). "" hides it.
+  notice: "Notice: [Holiday / weather closure / fee due date]",
+  noticeLink: "news.html",
+
+  // If the school uses a parent app or portal, put its address here to show "Parent Login"
+  parentLogin: "",
 
   // Buttons on the right of the header
   applyLink: "admissions-enquiry.html",
@@ -56,6 +64,17 @@ window.SITE = {
       { label: "Leadership and Teachers", href: "about-leadership.html" },
       { label: "Affiliation and Approvals", href: "about-affiliation.html" }
     ]},
+    { label: "Admissions", href: "admissions.html", children: [
+      { label: "Overview", href: "admissions.html" },
+      { label: "How to Apply", href: "admissions-how-to-apply.html" },
+      { label: "Eligibility and Documents", href: "admissions-eligibility.html" },
+      { label: "Fee Structure", href: "admissions-fees.html" },
+      { label: "Scholarships", href: "admissions-scholarships.html" },
+      { label: "Open Days and Campus Visits", href: "admissions-open-days.html" },
+      { label: "FAQs", href: "admissions-faqs.html" },
+      { label: "Downloads", href: "admissions-downloads.html" },
+      { label: "Enquiry Form", href: "admissions-enquiry.html" }
+    ]},
     { label: "Academics", href: "academics.html", children: [
       { label: "Overview", href: "academics.html" },
       { label: "Learning Approach", href: "academics-learning-approach.html" },
@@ -63,16 +82,8 @@ window.SITE = {
       { label: "Secondary (9–10)", href: "academics-secondary.html" },
       { label: "Senior Secondary Streams", href: "academics-senior-secondary.html" },
       { label: "Careers and Guidance", href: "academics-careers.html" },
+      { label: "Which Stream Suits Me?", href: "academics-stream-quiz.html" },
       { label: "Results", href: "academics-results.html" }
-    ]},
-    { label: "Admissions", href: "admissions.html", children: [
-      { label: "Overview", href: "admissions.html" },
-      { label: "How to Apply", href: "admissions-how-to-apply.html" },
-      { label: "Eligibility and Documents", href: "admissions-eligibility.html" },
-      { label: "Fee Structure", href: "admissions-fees.html" },
-      { label: "Scholarships", href: "admissions-scholarships.html" },
-      { label: "FAQs", href: "admissions-faqs.html" },
-      { label: "Enquiry Form", href: "admissions-enquiry.html" }
     ]},
     { label: "Campus", href: "campus.html", children: [
       { label: "Overview", href: "campus.html" },
@@ -104,15 +115,16 @@ window.SITE = {
       { label: "Calendar", href: "parents-calendar.html" },
       { label: "Photo and Video Gallery", href: "parents-gallery.html" },
       { label: "Public Mandatory Disclosure", href: "parents-disclosure.html" },
+      { label: "Pay Fees Online", href: "parents-pay-fees.html" },
       { label: "Contact Us", href: "contact.html" }
     ]}
   ],
 
   // Smaller links under the main menu
   secondaryNav: [
-    { label: "Apply Now", href: "admissions-enquiry.html" },
-    { label: "Book a Campus Visit", href: "admissions-enquiry.html" },
-    { label: "Fee Structure", href: "admissions-fees.html" },
+    { label: "Open Days", href: "admissions-open-days.html" },
+    { label: "Pay Fees Online", href: "parents-pay-fees.html" },
+    { label: "Calendar", href: "parents-calendar.html" },
     { label: "Public Mandatory Disclosure", href: "parents-disclosure.html" },
     { label: "Contact Us", href: "contact.html" }
   ],
@@ -123,7 +135,9 @@ window.SITE = {
   tagline: "Arya Sr. Secondary School. Nurturing minds, shaping futures since 2001.",
   footerLinks: [
     { label: "Admissions", href: "admissions.html" },
+    { label: "Open Days and Campus Visits", href: "admissions-open-days.html" },
     { label: "Fee Structure", href: "admissions-fees.html" },
+    { label: "Pay Fees Online", href: "parents-pay-fees.html" },
     { label: "Results", href: "academics-results.html" },
     { label: "Calendar", href: "parents-calendar.html" },
     { label: "Public Mandatory Disclosure", href: "parents-disclosure.html" },

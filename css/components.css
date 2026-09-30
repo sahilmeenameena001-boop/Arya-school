@@ -349,6 +349,91 @@ section.signposting .s p { color: #fff; display: none; font-size: clamp(14px, .9
 .follow-band .hashtag { font-weight: 900; color: var(--color-primary); font-size: 22px; margin: 20px 0 0; }
 
 /* Phones: the bottom bar replaces the round sticky button */
-@media (max-width: 767px) { .sticky-button { display: none; } }
 /* Long single words (e.g. "Scholarships") must fit the Explore cards */
 @media (min-width: 1200px) { .image-block-title { font-size: clamp(20px, 1.55vw, 30px); } }
+
+/* =====================================================================
+   ADDENDUM: Open Days, badge, notices, engagement additions
+   ===================================================================== */
+
+/* Floating Open Day badge: about 100px, bottom-left on every screen size */
+.sticky-button { width: 104px; height: 104px; padding: 12px; font-size: 14px; line-height: 1.1; background-color: var(--color-primary); border-color: #fff; z-index: 940; }
+.sticky-button.move { bottom: 30px; }
+@media (max-width: 767px) { .sticky-button { display: flex; width: 92px; height: 92px; font-size: 12.5px; left: 12px; bottom: 64px; } .sticky-button.move { bottom: 64px; } }
+/* Hidden while the menu is open, so it never covers a menu link */
+.menu-open .sticky-button { opacity: 0 !important; pointer-events: none; }
+
+/* Urgent notices bar (every page) */
+.notice-bar { background: #b3261e; text-align: center; padding: 7px 3vw; font-size: 14px; font-weight: 700; }
+.notice-bar a { color: #fff; }
+.notice-bar a:hover { text-decoration: underline; }
+.site-header-wrap.sticky .notice-bar { display: none; }
+
+/* Menu: Call and WhatsApp buttons, bigger tap targets on phones */
+.menu-contact { display: flex; gap: 10px; padding-left: 2rem; margin: 1.5rem 0 0; }
+.menu-contact .button { margin: 0; font-family: var(--font-sans); font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.menu-contact svg { width: 16px; height: 16px; fill: #fff; }
+@media (min-width: 1025px) { .menu-contact { padding-left: 20vw; } }
+@media (max-width: 767px) {
+  .header__nav .secondary-nav { border-top: 1px solid rgba(255, 255, 255, .35); padding-top: .5rem; }
+  .header__nav .secondary-nav a, .main-menu > li > a { display: flex; align-items: center; min-height: 48px; }
+  .menu-contact .button { min-height: 48px; }
+}
+
+/* Open Days list */
+.event { border-left: 4px solid var(--color-primary); background: var(--color-bg-alt); padding: 24px 28px; margin: 0 0 20px; }
+.event h2 { color: var(--color-primary); font-weight: 800; text-transform: none; font-size: clamp(22px, 1.8vw, 28px); margin: 0 0 8px; }
+.event .event-date { margin: 0 0 10px; color: var(--color-heading); }
+.event .button { margin: 6px 0 0; font-family: var(--font-sans); font-weight: 700; }
+
+/* Vertical timeline (Open Day programme) */
+.v-timeline { list-style: none; margin: 0 0 2em; padding: 0 0 0 26px; border-left: 3px solid var(--color-primary); }
+.v-timeline li { position: relative; padding: 0 0 22px 18px; }
+.v-timeline li::before { content: ""; position: absolute; left: -35px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 3px solid var(--color-primary); }
+.v-timeline .time { display: block; font-weight: 800; color: var(--color-primary); }
+.v-timeline p { margin: 4px 0 0; }
+
+/* "From the desk of" messages */
+.desk-message { display: flex; gap: 24px; align-items: flex-start; background: var(--color-bg-alt); padding: 24px; margin: 0 0 2em; }
+.desk-message img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid var(--color-primary); flex-shrink: 0; }
+.desk-message h3 { color: var(--color-primary); margin: 0 0 8px; font-size: 20px; }
+.desk-message p { margin: 0 0 8px; }
+.desk-message .sig { font-weight: 700; color: var(--color-heading); }
+@media (max-width: 600px) { .desk-message { flex-direction: column; } }
+
+/* Named admissions contact card */
+.contact-card { display: flex; gap: 24px; align-items: center; border: 1px solid var(--color-border); box-shadow: 0 6px 24px rgba(15, 42, 74, .08); padding: 24px; margin: 0 0 2em; background: #fff; }
+.contact-card img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.contact-card .eyebrow { display: block; text-transform: uppercase; font-size: 13px; font-weight: 800; letter-spacing: .08em; color: var(--color-primary); }
+.contact-card h3 { margin: 4px 0; }
+.contact-card p { margin: 0; }
+.contact-card .button-row { margin: 12px 0 0; }
+@media (max-width: 600px) { .contact-card { flex-direction: column; align-items: flex-start; } }
+
+/* Stream quiz */
+.stream-quiz { margin: 0 0 2em; }
+.quiz-q { border: 0; background: var(--color-bg-alt); padding: 18px 22px; margin: 0 0 14px; }
+.quiz-q legend { font-weight: 800; color: var(--color-heading); padding: 0; float: left; width: 100%; margin-bottom: 10px; }
+.quiz-q label { display: flex; align-items: center; gap: 10px; min-height: 40px; cursor: pointer; clear: both; }
+.quiz-q input { width: 18px; height: 18px; accent-color: var(--color-primary); }
+.stream-quiz .button { font-family: var(--font-sans); font-weight: 700; margin-top: 10px; }
+.quiz-result { background: var(--color-primary); color: #fff; padding: 26px; margin-top: 20px; }
+.quiz-result h2, .quiz-result p { color: #fff; }
+.quiz-result .text-link { color: #fff; text-decoration: underline; }
+
+/* Home: Open Day strip (above the admission banner) */
+.openday-strip { background: var(--color-cta); color: #fff; padding: 22px 6vw; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 24px; text-align: center; }
+.openday-strip p { color: #fff; margin: 0; font-size: clamp(16px, 1.3vw, 20px); font-weight: 600; }
+.openday-strip .button { margin: 0; background: #fff; color: var(--color-cta-dark); font-family: var(--font-sans); font-weight: 800; }
+.openday-strip .button:hover { background: var(--color-dark); color: #fff; }
+
+/* Home: "This Week at Arya" photo strip */
+.this-week { padding: clamp(50px, 6vw, 100px) 3vw; background: #fff; }
+.this-week > h2 { text-align: center; color: var(--color-primary); font-weight: 900; font-size: clamp(32px, 3.7vw, 60px); margin: 0 0 8px; }
+.this-week > p { text-align: center; margin: 0 0 30px; }
+.week-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.week-grid figure { margin: 0; }
+.week-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.week-grid figcaption { font-size: 14px; line-height: 1.35; color: var(--color-text); margin-top: 6px; }
+@media (max-width: 1000px) { .week-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px)  { .week-grid { grid-template-columns: repeat(2, 1fr); } }

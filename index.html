@@ -9,12 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap">
-  <link rel="stylesheet" href="css/variables.css?v=5">
-  <link rel="stylesheet" href="css/base.css?v=5">
-  <link rel="stylesheet" href="css/layout.css?v=5">
-  <link rel="stylesheet" href="css/components.css?v=5">
-  <link rel="stylesheet" href="css/home.css?v=5">
-  <link rel="stylesheet" href="css/landing.css?v=5">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/home.css?v=6">
+  <link rel="stylesheet" href="css/landing.css?v=6">
 </head>
 <!-- data-smooth = smooth scrolling + parallax (desktop) -->
 <body class="home" data-smooth>
@@ -41,7 +41,7 @@
             <div class="button-row">
               <a class="button cta" href="admissions-enquiry.html">Apply for <span class="tbc">[2027–28]</span></a>
               <a class="button border" href="admissions-enquiry.html">Book a Campus Visit</a>
-              <a class="button border" href="documents/prospectus.pdf">Download Prospectus</a>
+              <a class="button border" href="admissions-downloads.html#prospectus">Download Prospectus</a>
             </div>
           </div>
           <button class="mute-video" aria-label="Unmute video">
@@ -203,6 +203,55 @@
           </div>
         </section>
 
+        <!-- ================= STUDENT-LED CAMPUS TOUR + ARYA VOICES =================
+             Tour: 3 minutes, led by two Arya students, Hindi with English captions.
+             Voices: 20-second clips of students and parents (reuse as Instagram reels). Set data-video on each. -->
+        <section class="blue-section">
+          <div class="lower">
+            <div class="wrapper">
+              <h2>Take the Tour</h2>
+              <a class="video-card main" href="#" data-video="">
+                <img src="images/placeholders/photo-02.svg" alt="">
+                <span class="play"><svg viewBox="0 0 31 38"><path d="M0 0l31 19L0 38z"/></svg></span>
+                <div class="title">Student-led campus tour</div>
+                <div class="copy">Two Arya students, one junior and one senior, show you around the classrooms, labs, library and playground.</div>
+              </a>
+              <h2 style="margin-top:60px">Arya Voices</h2>
+              <div class="videos-grid">
+                <a class="video-card" href="#" data-video="">
+                  <img src="images/placeholders/photo-03.svg" alt="">
+                  <span class="play"><svg viewBox="0 0 31 38"><path d="M0 0l31 19L0 38z"/></svg></span>
+                  <div class="title">What does Arya mean to you?</div>
+                </a>
+                <a class="video-card" href="#" data-video="">
+                  <img src="images/placeholders/photo-04.svg" alt="">
+                  <span class="play"><svg viewBox="0 0 31 38"><path d="M0 0l31 19L0 38z"/></svg></span>
+                  <div class="title">Favourite thing about Arya</div>
+                </a>
+                <a class="video-card" href="#" data-video="">
+                  <img src="images/placeholders/photo-05.svg" alt="">
+                  <span class="play"><svg viewBox="0 0 31 38"><path d="M0 0l31 19L0 38z"/></svg></span>
+                  <div class="title">Arya in three words</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= THIS WEEK AT ARYA: six photos, one-line captions, refreshed weekly from Instagram ================= -->
+        <section class="this-week">
+          <h2>This Week at Arya</h2>
+          <p>A few moments from around the school this week.</p>
+          <div class="week-grid">
+            <figure><img src="images/placeholders/photo-06.svg" alt="[Photo caption]"><figcaption>[One-line caption]</figcaption></figure>
+            <figure><img src="images/placeholders/photo-07.svg" alt="[Photo caption]"><figcaption>[One-line caption]</figcaption></figure>
+            <figure><img src="images/placeholders/photo-08.svg" alt="[Photo caption]"><figcaption>[One-line caption]</figcaption></figure>
+            <figure><img src="images/placeholders/photo-09.svg" alt="[Photo caption]"><figcaption>[One-line caption]</figcaption></figure>
+            <figure><img src="images/placeholders/photo-10.svg" alt="[Photo caption]"><figcaption>[One-line caption]</figcaption></figure>
+            <figure><img src="images/placeholders/photo-11.svg" alt="[Photo caption]"><figcaption>[One-line caption]</figcaption></figure>
+          </div>
+        </section>
+
         <!-- ================= 10. WHAT PARENTS SAY =================
              Three testimonials, 30 to 40 words each, with parent name and the class of their child. Collect with written permission. -->
         <section class="section-pad" style="background: var(--color-bg-alt);">
@@ -213,6 +262,12 @@
             <blockquote><p><span class="tbc">[Testimonial, 30 to 40 words]</span></p><cite><span class="tbc">[Parent name], parent of a Class [ ] student</span></cite></blockquote>
           </div>
         </section>
+
+        <!-- ================= OPEN DAY STRIP ================= -->
+        <div class="openday-strip">
+          <p>Next Open Day: [DATE]. Meet our Principal, tour the campus and ask your questions. Limited places.</p>
+          <a class="button" href="admissions-open-days.html">Book Your Visit &rarr;</a>
+        </div>
 
         <!-- ================= 11. ADMISSION BANNER ================= -->
         <section class="cta-banner">
@@ -246,9 +301,9 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-  <script src="js/site-config.js?v=5"></script>
-  <script src="js/layout.js?v=5"></script>
-  <script src="js/animations.js?v=5"></script>
-  <script src="js/components.js?v=5"></script>
+  <script src="js/site-config.js?v=6"></script>
+  <script src="js/layout.js?v=6"></script>
+  <script src="js/animations.js?v=6"></script>
+  <script src="js/components.js?v=6"></script>
 </body>
 </html>

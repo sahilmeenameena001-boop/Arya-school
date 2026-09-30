@@ -11,6 +11,7 @@
   function openMenu(open) {
     if (!nav) return;
     nav.classList.toggle("active", open);
+    document.body.classList.toggle("menu-open", open);
     html.style.overflow = open ? "hidden" : "";
     var b = document.querySelector(".burger");
     if (b) b.setAttribute("aria-expanded", String(open));
@@ -183,6 +184,24 @@
   document.querySelectorAll("form[data-enquiry-form]").forEach(function (form) {
     var msg = form.querySelector(".form-message");
     function show(ok, text) { msg.className = "form-message " + (ok ? "success" : "error"); msg.textContent = text; }
+    // Message after a successful send (Open Day bookings and the prospectus form have their own)
+    function successText() {
+      if (form.getAttribute("data-success") === "booking") {
+        var ev = form.querySelector("select[name^='Open Day']").value;
+        var date = "";
+        document.querySelectorAll("[data-event]").forEach(function (b) {
+          if (b.getAttribute("data-event") === ev) date = b.parentElement.querySelector(".event-date").textContent.trim();
+        });
+        return "Thank you. Your place at the " + ev + (date ? " on " + date : "") + " is booked. We look forward to welcoming you to Arya. Please bring a photocopy of the child’s latest report card, if available. Need to change your plan? Call " + SITE.contact.phone + ".";
+      }
+      return MSG_OK;
+    }
+    function done() {
+      var unlock = form.getAttribute("data-unlock");
+      show(true, successText());
+      if (unlock) { msg.innerHTML += ' <a class="text-link" href="' + unlock + '" target="_blank">Open the prospectus &rarr;</a>'; window.open(unlock, "_blank"); }
+      form.reset();
+    }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
@@ -190,17 +209,49 @@
       var endpoint = window.SITE && SITE.formEndpoint;
       if (endpoint) {
         fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } })
-          .then(function (r) { if (!r.ok) throw new Error(); show(true, MSG_OK); form.reset(); })
+          .then(function (r) { if (!r.ok) throw new Error(); done(); })
           .catch(function () { show(false, MSG_ERR); });
       } else {
         var lines = [form.getAttribute("data-enquiry-form") || "Website enquiry"];
         data.forEach(function (v, k) { if (v) lines.push(k + ": " + v); });
         window.open("https://wa.me/" + SITE.contact.whatsapp + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
-        show(true, MSG_OK);
-        form.reset();
+        done();
       }
     });
   });
+
+  /* ---------- Open Days: a "Book" button picks its event in the booking form ---------- */
+  document.querySelectorAll("[data-event]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var sel = document.querySelector("#book select[name^='Open Day']");
+      if (sel) sel.value = b.getAttribute("data-event");
+    });
+  });
+
+  /* ---------- "Which stream suits me?" quiz ---------- */
+  var quiz = document.querySelector(".stream-quiz");
+  if (quiz) {
+    var STREAMS = {
+      science: ["Science", "You enjoy questions, experiments and solving problems. Science opens the way to engineering, medicine, research and technology."],
+      commerce: ["Commerce", "You have a head for numbers, planning and enterprise. Commerce leads to CA, management, banking and business."],
+      arts: ["Arts and Humanities", "You enjoy ideas, people and expression. Arts leads to law, civil services, teaching, journalism and the creative professions."]
+    };
+    quiz.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!quiz.reportValidity()) return;
+      var score = { science: 0, commerce: 0, arts: 0 };
+      quiz.querySelectorAll("input:checked").forEach(function (i) { score[i.value]++; });
+      var best = Object.keys(score).sort(function (a, b) { return score[b] - score[a]; })[0];
+      var box = quiz.querySelector(".quiz-result");
+      box.querySelector(".stream-name").textContent = STREAMS[best][0];
+      box.querySelector(".stream-line").innerHTML = STREAMS[best][1] + ' <a class="text-link" href="academics-senior-secondary.html#' + best + '">Explore ' + STREAMS[best][0] + " &rarr;</a>";
+      box.hidden = false;
+      var follow = document.querySelector(".quiz-follow");
+      follow.hidden = false;
+      follow.querySelector(".qz-stream").value = STREAMS[best][0];
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }
 
   /* ---------- Smooth scroll for #anchor links ---------- */
   document.addEventListener("click", function (e) {

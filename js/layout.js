@@ -78,6 +78,7 @@
         "</div>" +
         '<button class="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>' +
       "</header>" +
+      (S.notice ? '<div class="notice-bar"><a href="' + (S.noticeLink || "#") + '">' + S.notice + "</a></div>" : "") +
       "</div>" +
       '<nav class="header__nav" aria-label="Main menu">' +
         '<div class="decor"></div>' +
@@ -89,7 +90,8 @@
             var active = item.children && item.children.some(function (c) { return isCurrent(c.href); });
             return '<li class="' + (item.children ? "has-children" : "") + (active ? " active" : "") + '">' + link(item) + sub + "</li>";
           }).join("") + "</ul>" +
-          '<ul class="secondary-nav">' + list(S.secondaryNav) + "</ul>" +
+          '<ul class="secondary-nav">' + list(S.secondaryNav.concat(S.parentLogin ? [{ label: "Parent Login", href: S.parentLogin }] : [])) + "</ul>" +
+          '<div class="menu-contact"><a class="button cta" href="' + tel(C.phone) + '">' + ICONS.phone + ' Call</a><a class="button whatsapp" href="' + wa + '" target="_blank" rel="noopener">' + ICONS.whatsapp + " WhatsApp</a></div>" +
           '<div class="social">' + socials() + "</div>" +
         "</div>" +
       "</nav>" +
